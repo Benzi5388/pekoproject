@@ -28,6 +28,15 @@ class UserRepository {
 
     return user;
   }
+
+  async findAllUsers() {
+    return User.findAll();
+  }
+
+  async findUserById(id) {
+    const user = await User.findByPk(id);
+    return user;
+  }
 }
 
 export default new UserRepository();
